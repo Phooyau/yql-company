@@ -1,0 +1,25 @@
+{
+  "name": "yql-company",
+  "version": "1.0.0",
+  "description": "易企乐企业管理系统",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phooyau/yql-company.git"
+  },
+  "author": "Phooyau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Phooyau/yql-company/issues"
+  },
+  "homepage": "https://github.com/Phooyau/yql-company#readme",
+  "devDependencies": {
+    "webpack": "^3.12.0"
+  }
+}
