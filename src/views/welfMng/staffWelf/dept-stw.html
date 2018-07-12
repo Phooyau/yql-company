@@ -1,0 +1,65 @@
+<div class="secondCont">
+    <div class="postWelfWrap" ng-repeat="post in welfListByPost">
+        <div class="tabHeader clearfix">
+            <h4 class="tabTitle">{{deptName + '——' + post.cpName}}</h4>
+        </div>
+        <div class="panelContent">
+            <div class="welf-panel">
+                <h4>制式福利</h4>
+                <ul class="welf-list clearfix">
+
+                    <li class="welf-item" ng-repeat="item in post.companyEmployeeBoonList | filter:distOther2">
+                        <a href="javascript:;">
+                            <div class="welf-img">
+                                <img alt="福利图片" ng-src="{{item.coverPicUrl}}">
+                            </div>
+                            <p title="{{item.boonName}}">{{item.boonName}}</p>
+                            <p>{{item.companyBoonType | getTypeName:etprWelfTs}}</p>
+                            <i class="del-welf" ng-click="delWelfare($event, item)"></i>
+                        </a>
+                    </li>
+
+                    <li class="welf-item" ng-repeat="item in etprWelfTs | filter:distOther">
+                        <a href="javascript:;" ng-class="{'etpr-disabled': !item.status}" ng-click="addWelfare($event, item, post)">
+                            <div class="welf-img" ng-class="item.dictId | getWelfCla">
+                                <div class="welf-bgimg"></div>
+                                <p>{{item.dictName | sliceLast2}}</p>
+                            </div>
+                            <p>点击添加</p>
+                            <p>{{item.dictName}}</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="welf-panel">
+                <h4>其他福利</h4>
+                <ul class="welf-list clearfix">
+
+                    <li class="welf-item" ng-repeat="item in post.companyEmployeeBoonList | filter: {companyBoonType: 705}">
+                        <a href="javascript:;">
+                            <div class="welf-img">
+                                <img alt="福利图片" ng-src="{{item.coverPicUrl}}">
+                            </div>
+                            <p title="{{item.boonName}}">{{item.boonName}}</p>
+                            <p>{{item.companyBoonType | getTypeName:etprWelfTs}}</p>
+                            <i class="del-welf" ng-click="delWelfare($event, item)"></i>
+                        </a>
+                    </li>
+
+                    <li class="welf-item" ng-repeat="item in etprWelfTs | filter:{dictId: 705}">
+                        <a href="javascript:;" ng-class="{'etpr-disabled': !item.status}" ng-click="addWelfare($event, item, post)">
+                            <div class="welf-img" ng-class="item.dictId | getWelfCla">
+                                <div class="welf-bgimg"></div>
+                                <p>{{item.dictName | sliceLast2}}</p>
+                            </div>
+                            <p>点击添加</p>
+                            <p>{{item.dictName}}</p>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

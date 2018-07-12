@@ -1,0 +1,88 @@
+<div class="leafPageCont" id="departMng" menu-active>
+    <h4 class="pageTitle">您的位置：员工管理&nbsp;&gt;&nbsp;<span>部门管理</span></h4>
+    <div>
+        <div class="dataPanel">
+            <h3 class="panelTitle">部门管理</h3>
+            <div class="panelContent">
+                <div class="treeListWrap clearfix">
+                    <h4 class="fl treeTitle">员工职位</h4>
+                    <div class="titleBtnWrap">
+                        <button type="button" class="etprBtn add" ng-click="addPost($event)">添加职位</button>
+                    </div>
+                    <div id="staffPost" class="treeList" epr-jstree epr-jt-opts="optsStp" epr-jtapi="jtapi_sp" epr-compile="jtCompileStp()"></div>
+                </div>
+                <div class="treeListWrap clearfix">
+                    <h4 class="fl treeTitle">公司部门</h4>
+                    <div class="titleBtnWrap">
+                        <button type="button" class="etprBtn add" ng-click="addDept($event)">添加部门</button>
+                    </div>
+                    <div id="depart" class="treeList" epr-jstree epr-jt-opts="optsDep" epr-jtapi="jtapi_dp" epr-compile="jtCompileDep()"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 添加模态框（Modal） -->
+<div class="etprModal modal fade" id="etprMod_add" tabindex="-1" role="dialog" aria-labelledby="etprMod_add_gmoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="etprMod_add_gmoLabel" ng-bind="modAddTitleA"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="etprModForm clearfix">
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label" ng-bind="parTreeNameA"></label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="parNameA" ng-model="parNameA" autocomplete="off" placeholder="请输入{{parTreeNameA}}" class="etpr-input etpr-input-disable" readonly>
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must" ng-bind="treeNameA"></label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="nameA" ng-model="nameA" autocomplete="off" epr-autofocus placeholder="请输入{{treeNameA}}" class="etpr-input">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- 编辑模态框（Modal） -->
+<div class="etprModal modal fade" id="etprMod_edit" tabindex="-1" role="dialog" aria-labelledby="etprMod_edit_gmoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="etprMod_edit_gmoLabel" ng-bind="modEditTitleE"></h4>
+            </div>
+            <div class="modal-body">
+                <form class="etprModForm clearfix">
+                    <!--<div class="etpr-form-item col-lg-6">-->
+                        <!--<label class="etpr-form-label" ng-bind="parTreeNameE"></label>-->
+                        <!--<div class="etpr-input-block">-->
+                            <!--<input type="text" name="parNameE" ng-model="parNameE" autocomplete="off" placeholder="请输入{{parTreeNameE}}" class="etpr-input etpr-input-disable" readonly>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must" ng-bind="treeNameE"></label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="nameE" ng-model="nameE" autocomplete="off" epr-autofocus placeholder="请输入{{treeNameE}}" class="etpr-input">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

@@ -1,0 +1,147 @@
+/**数据表格样式**/
+.panelContent .dataTables_length label {
+    font-weight: normal;
+}
+
+.panelContent .dataTables_wrapper .dataTables_scroll {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.panelContent .dataTables_wrapper .dataTables_scrollHead,
+.panelContent .dataTables_wrapper .dataTables_scrollFoot {
+    border-top: 1px solid #ddd !important;
+    border-bottom: 1px solid #ddd !important;
+}
+
+.panelContent .dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid #ddd;
+}
+
+/*无border*/
+.eprTbWrap-nob .dataTables_wrapper .dataTables_scroll {
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+}
+
+.eprTbWrap-nob .dataTables_wrapper .dataTables_scrollHead,
+.eprTbWrap-nob .dataTables_wrapper .dataTables_scrollFoot {
+    border-top: 1px solid transparent !important;
+    border-bottom: 1px solid transparent !important;
+}
+
+.eprTbWrap-nob .dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid transparent;
+}
+
+table.eprWmsTb {
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+table.eprWmsTb.no-footer {
+    border-bottom: 1px solid #ddd;
+}
+
+.dataTables_scroll table.eprWmsTb {
+    border-left: none;
+    border-bottom: none;
+}
+
+table.eprWmsTb thead tr {
+    background: #F5F7FE;
+}
+
+table.eprWmsTb.display tbody tr.odd {
+    background-color: #FAFAFA;
+}
+
+table.eprWmsTb.hover tbody tr:hover,
+table.eprWmsTb.display tbody tr:hover {
+    background-color: #F6F6F6;
+}
+
+table.eprWmsTb thead tr th,
+table.eprWmsTb tfoot tr th {
+    /*white-space: nowrap;*/
+    border-bottom: none;
+    border-top: 1px solid #ddd;
+    font-weight: normal;
+}
+
+table.dataTable.eprWmsTb tbody tr td {
+    border-top: 1px solid #ddd;
+}
+
+table.eprWmsTb.eprWmsTb-nob tbody tr td {
+    border-top: 1px solid transparent;
+}
+
+table.eprWmsTb thead tr th,
+table.eprWmsTb tfoot tr th,
+table.eprWmsTb tbody tr td {
+    /*border-right: 1px solid #ddd;*/
+    font-family: PingFang-SC-Medium;
+    text-align: center;
+    white-space: nowrap;
+}
+
+table.eprWmsTb thead tr th {
+    font-size: 18px;
+    line-height: 27px;
+    height:27px;
+    color: #4DA1FF;
+    padding: 18px 18px 14px;
+}
+
+table.eprWmsTb tbody tr td {
+    font-size: 16px;
+    line-height: 27px;
+    height: 27px;
+    color: #666;
+    padding: 6px 18px 7px;
+}
+
+table.eprWmsTb.display tbody tr:first-child td {
+    border-top: 1px solid #ddd;
+}
+
+.dataTables_scroll table.eprWmsTb thead tr:first-child th,
+.dataTables_scroll table.eprWmsTb tbody tr:first-child td,
+.dataTables_scroll table.eprWmsTb tfoot tr:first-child th {
+    border-top: none;
+}
+
+/*表格分页公共样式*/
+.panelContent .dataTables_paginate .paginate_button {
+    padding: 4px 6px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.panelContent .dataTables_paginate .paginate_button:hover {
+    border: 1px solid #11A0DE;
+    background: #FFF;
+    color: #111 !important;
+}
+
+.panelContent .dataTables_paginate .paginate_button.current,
+.panelContent .dataTables_paginate .paginate_button.current:hover {
+    border: 1px solid #11A0DE;
+    background: #11A0DE;
+    color: #FFF !important;
+}
+
+.panelContent .dataTables_paginate .paginate_button.disabled,
+.panelContent .dataTables_paginate .paginate_button.disabled:hover,
+.panelContent .dataTables_paginate .paginate_button.disabled:active {
+    cursor: not-allowed;
+    color: #888 !important;
+    border: 1px solid #ddd;
+}
+
+
+
+/*表格无边框*/

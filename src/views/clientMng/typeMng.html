@@ -1,0 +1,52 @@
+<div class="leafPageCont" id="departMng" menu-active>
+    <h4 class="pageTitle">您的位置：客户管理&nbsp;&gt;&nbsp;<span>类型管理</span></h4>
+    <div>
+        <div class="dataPanel">
+            <h3 class="panelTitle">类型管理</h3>
+            <div class="panelContent">
+                <div class="treeListWrap">
+                    <div class="clearfix">
+                        <h4 class="fl treeTitle">客户分类</h4>
+                        <div class="titleBtnWrap">
+                            <button type="button" class="etprBtn add" ng-click="addType($event)">添加分类</button>
+                        </div>
+                    </div>
+                    <ul class="typeList clearfix">
+                        <li class="typeItem" ng-repeat="item in emblems">
+                            <span ng-bind="item.emblemName"></span>
+                            <div class="itemBtnWrap">
+                                <button class='etprBtn-jt del_jt' type='button' ng-click='deleteCur($event, item)'></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加模态框（Modal） -->
+    <div class="etprModal modal fade" id="etprMod_add" tabindex="-1" role="dialog" aria-labelledby="etprMod_addLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="etprMod_addLabel">添加员工</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="etprModForm clearfix">
+                        <div class="etpr-form-item col-lg-6">
+                            <label class="etpr-form-label must">分类名称</label>
+                            <div class="etpr-input-block">
+                                <input type="text" name="typeNameA" ng-model="typeNameA" autocomplete="off" epr-autofocus placeholder="请输入分类名称" class="etpr-input">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div class="leafPageCont" id="welfDetail">
+    <h4 class="pageTitle">您的位置：福利管理&nbsp;&gt;&nbsp;福利市场&nbsp;&gt;&nbsp;<span>福利详情</span></h4>
+    <div>
+        <div class="dataPanel welfDetailCont clearfix">
+            <div class="welfDetImgWrap">
+                <img class="welfDetImg" alt="{{welfItem.cardName}}" title="{{welfItem.cardName}}" ng-src="{{welfItem.coverPicUrl}}">
+            </div>
+            <div class="welfTextInfo">
+                <h2 class="welfTitle" title="{{welfItem.boonName}}" ng-bind="welfItem.boonName">甜蜜有约生日礼包</h2>
+                <p class="welfInfo" title="{{welfItem.boonIntro}}" ng-bind="welfItem.boonIntro">礼包内容：100元加油券x1、生日蛋糕券x1、观影券x2、鲜花券x1</p>
+                <p class="welfPrice">礼包价值：￥{{welfItem.boonPrice | moneyShow}}</p>
+                <p class="etprPrice">企业价格：<span>￥{{welfItem.companyPrice | moneyShow}}</span></p>
+                <div class="welfBtnWrap">
+                    <button type="button" class="welf-btn" ng-bind="btnText" ng-click="giveWelf($event)">我要赠送</button>
+                </div>
+            </div>
+            <div class="goBackWrap">
+                <a class="backBtn" href="javascript:;" ng-if="backShow" ng-click="goBack()">返回</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 提示模态框（Modal） -->
+    <div class="etprModal modal fade" id="etprMod_msg" tabindex="-1" role="dialog" aria-labelledby="etprMod_msgLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="etprMod_msgLabel">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-msg">添加即可生效，是否确认添加！</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue" ng-click="confirmAdd($event)">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <!-- 导入模态框（Modal） -->
+    <div class="etprModal modal fade" id="etprMod_imp" tabindex="-1" role="dialog" aria-labelledby="etprMod_impLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="etprMod_impLabel">我要赠送</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="etprModForm singleItem clearfix" method="post">
+                        <div class="etpr-form-item col-lg-11">
+                            <label class="etpr-form-label">下载手机号模板</label>
+                            <div class="etpr-input-block">
+                                <a class="etpr-num etpr-aDownload" ng-href="{{downloadUrl}}">下载模板</a>
+                            </div>
+                        </div>
+                        <div class="etpr-form-item col-lg-11">
+                            <label class="etpr-form-label must">添加手机号</label>
+                            <div class="etpr-input-block" style="margin-bottom: 10px;">
+                                <button type="button" class="etpr-num etpr-aDownload" ng-click="toggleMode()">{{modeText}}</button>
+                            </div>
+                            <div class="etpr-input-block">
+                                <input type="text" ng-show="!impMode" name="phones" ng-model="phonesI" epr-autofocus autocomplete="off" placeholder="请添加手机号" class="etpr-input">
+                                <div ng-show="impMode">
+                                    <a class="etpr-file-a" href="javascript:;">导入手机号</a>
+                                    <div class="etpr-file-show">
+                                        <input type="text" name="file-show-1" ng-model="impFile.value" class="etpr-input">
+                                    </div>
+                                    <input type="file" name="file" ng-file-modal="impFile" class="etpr-file">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="etpr-form-item col-lg-11">
+                            <label class="etpr-form-label must">赠送数量</label>
+                            <div class="etpr-input-block">
+                                <button type="button" class="etpr-num etpr-calc etpr-disabled" ng-click="numMinus($event)" disabled>-</button><!--
+                                --><input type="text" name="count" ng-model="numI" class="etpr-num" readonly><!--
+                                --><button type="button" class="etpr-num etpr-calc" ng-click="numPlus($event)">+</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!--<iframe name='frameFile1' id="frameFile1" style='display: none;'></iframe>-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</div>

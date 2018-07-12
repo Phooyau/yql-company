@@ -1,0 +1,46 @@
+
+
+/**分页样式**/
+.pagination {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.pagination > li {
+    display: inline-block;
+}
+
+.pagination > li > a {
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #666;
+    height: 26px;
+    line-height: 26px;
+    margin: 0 0 6px 6px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:last-child > a {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.pagination > li > a:hover,
+.pagination .active a {
+    background: #5a98de;
+    color: #fff;
+}
+
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover {
+    color: #bbb;
+    background-color: #fff;
+    border-color: #eee;
+    cursor: not-allowed;
+}

@@ -1,0 +1,12 @@
+<div class="leafPageCont" id="clientMng" menu-active>
+    <h4 class="pageTitle">您的位置：客户管理&nbsp;&gt;&nbsp;<span>客户管理</span></h4>
+    <div>
+        <ul class="topMenu moreMenu clearfix">
+            <li class="tMenuItem" ng-class="{active: item.emblemId == emblemIdClm}" ng-repeat="item in emblems"><a ng-click="toglActive($event)" ui-sref="clientMng.starsClm({emblemId: item.emblemId})" ng-bind="item.emblemName"></a></li>
+        </ul>
+        <div ui-view class="bottomContent" ng-show="emblems[0]">
+
+        </div>
+        <div class="nullTip" ng-if="!emblems[0]">无客户类型</div>
+    </div>
+</div>

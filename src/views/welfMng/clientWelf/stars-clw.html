@@ -1,0 +1,33 @@
+<div class="secondCont">
+
+    <div class="panelContent">
+        <div class="welf-panel">
+            <h4>福利</h4>
+            <ul class="welf-list clearfix">
+
+                <li class="welf-item" ng-repeat="item in welfLists">
+                    <a href="javascript:;">
+                        <div class="welf-img">
+                            <img alt="福利图片" ng-src="{{item.coverPicUrl}}">
+                        </div>
+                        <p title="{{item.boonName}}">{{item.boonName}}</p>
+                        <p>{{item.companyBoonType | getTypeName:etprWelfTs}}</p>
+                        <i class="del-welf" ng-click="delWelfare($event, item)"></i>
+                    </a>
+                </li>
+
+                <li class="welf-item" ng-repeat="item in etprWelfTs | filter:{dictId: 705}">
+                    <a href="javascript:;" ng-class="{'etpr-disabled': !item.status}" ng-click="addWelfare($event, item)">
+                        <div class="welf-img" ng-class="item.dictId | getWelfCla">
+                            <div class="welf-bgimg"></div>
+                            <p>{{item.dictName | sliceLast2}}</p>
+                        </div>
+                        <p>点击添加</p>
+                        <p>{{item.dictName}}</p>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+/*表单校验*/
+.Validform_error,
+input.error,
+select.error,
+textarea.error {
+    background-color: #fbe2e2;
+    border-color: #c66161;
+    color: #c00;
+}
+
+label.error {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    color: #ef392b;
+    font-size: 12px;
+    font-family: Microsoft YaHie;
+    font-weight: normal;
+    margin: 2px 0 0;
+}

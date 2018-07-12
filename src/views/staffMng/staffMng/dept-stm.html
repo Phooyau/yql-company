@@ -1,0 +1,182 @@
+<div class="secondCont">
+    <div class="tabHeader clearfix">
+        <h4 class="tabTitle">员工列表</h4>
+        <div class="operation">
+            <div class="searchArea">
+                <input type="text" class="searchIpt" ng-model="keyword" placeholder="输入员工姓名或手机号"><button type="button" class="searchBtn" ng-click="searchDt($event)">查找</button>
+            </div>
+            <a download="员工模板.xlsx" ng-href="{{downloadUrl}}" class="etprBtn download">下载模板</a>
+            <button type="button" class="etprBtn import" data-toggle="modal" data-target="#etprMod_imp">导入</button>
+            <button type="button" class="etprBtn add" ng-click="addRow($event)">添加</button>
+        </div>
+    </div>
+
+    <div class="panelContent">
+        <table id="staffList" class="eprWmsTb display" cellspacing="0" width="100%" epr-data-table epr-tb-opts="opts" epr-tb-dtapi="dtapi" epr-tb-req="req" epr-tb-adjust="leftFlag">
+            <thead>
+            <tr>
+                <th width="80">姓名</th>
+                <th width="80">性别</th>
+                <th width="120">手机号</th>
+                <th width="200">身份证号</th>
+                <th width="80">职位</th>
+                <th width="80">岗位</th>
+                <th width="80">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 添加模态框（Modal） -->
+<div class="etprModal modal fade" id="etprMod_add" tabindex="-1" role="dialog" aria-labelledby="etprMod_addLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="etprMod_addLabel">添加员工</h4>
+            </div>
+            <div class="modal-body">
+                <form class="etprModForm clearfix">
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">员工姓名</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="nameA" ng-model="nameA" autocomplete="off" epr-autofocus placeholder="请输入姓名" class="etpr-input">
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">员工性别</label>
+                        <div class="etpr-input-block">
+                            <select name="genderA" ng-model="genderA" class="etpr-select">
+                                <option ng-repeat="item in genders" value="{{item.value}}">{{item.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">身份证号</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="idCardA" ng-model="idCardA" autocomplete="off" placeholder="请输入身份证号" class="etpr-input">
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">员工职位</label>
+                        <div class="etpr-input-block">
+                            <select name="postA" ng-model="postA" class="etpr-select">
+                                <option ng-repeat="item in posts" value="{{item.cpId}}">{{item.postName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">手机号码</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="phoneA" ng-model="phoneA" autocomplete="off" placeholder="请输入手机号" class="etpr-input">
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">岗位名称</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="jobNameA" ng-model="jobNameA" autocomplete="off" placeholder="请输入岗位名称" class="etpr-input">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- 编辑模态框（Modal） -->
+<div class="etprModal modal fade" id="etprMod_edit" tabindex="-1" role="dialog" aria-labelledby="etprMod_editLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="etprMod_editLabel">编辑员工</h4>
+            </div>
+            <div class="modal-body">
+                <form class="etprModForm clearfix">
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">员工姓名</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="nameE" ng-model="nameE" autocomplete="off" epr-autofocus placeholder="请输入姓名" class="etpr-input">
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">员工性别</label>
+                        <div class="etpr-input-block">
+                            <select name="genderE" ng-model="genderE" class="etpr-select">
+                                <option ng-repeat="item in genders" value="{{item.value}}">{{item.text}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">身份证号</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="idCardE" ng-model="idCardE" autocomplete="off" placeholder="请输入身份证号" class="etpr-input">
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">员工职位</label>
+                        <div class="etpr-input-block">
+                            <select name="postE" ng-model="postE" class="etpr-select">
+                                <option ng-repeat="item in posts" value="{{item.cpId}}">{{item.postName}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">手机号码</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="phoneE" ng-model="phoneE" autocomplete="off" placeholder="请输入手机号" class="etpr-input">
+                        </div>
+                    </div>
+                    <div class="etpr-form-item col-lg-6">
+                        <label class="etpr-form-label must">岗位名称</label>
+                        <div class="etpr-input-block">
+                            <input type="text" name="jobNameE" ng-model="jobNameE" autocomplete="off" placeholder="请输入岗位名称" class="etpr-input">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+<!-- 导入模态框（Modal） -->
+<div class="etprModal modal fade" id="etprMod_imp" tabindex="-1" role="dialog" aria-labelledby="etprMod_impLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="etprMod_impLabel">导入员工</h4>
+            </div>
+            <div class="modal-body">
+                <form class="etprModForm singleItem clearfix" method="post">
+                    <div class="etpr-form-item col-lg-11">
+                        <label class="etpr-form-label must">导入</label>
+                        <div class="etpr-input-block">
+                            <a class="etpr-file-a" href="javascript:;">选择文件</a>
+                            <div class="etpr-file-show">
+                                <input type="text" name="file-show-1" ng-model="impFile.value" class="etpr-input">
+                            </div>
+                            <input type="file" name="file" ng-file-modal="impFile" class="etpr-file">
+                        </div>
+                    </div>
+                </form>
+                <!--<iframe name='frameFile1' id="frameFile1" style='display: none;'></iframe>-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue">保存</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

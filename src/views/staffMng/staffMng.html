@@ -1,0 +1,12 @@
+<div class="leafPageCont" id="staffMng" menu-active>
+    <h4 class="pageTitle">您的位置：员工管理&nbsp;&gt;&nbsp;<span>员工管理</span></h4>
+    <div>
+        <ul class="topMenu clearfix">
+            <li class="tMenuItem" ng-class="{active: item.cdId == cdIdStm}" ng-repeat="item in depts"><a ng-click="toglActive($event)" ui-sref="staffMng.deptStm({cdId: item.cdId})">{{item.deptName}}</a></li>
+        </ul>
+        <div ui-view class="bottomContent" ng-show="depts[0]">
+
+        </div>
+        <div class="nullTip" ng-if="!depts[0]">无公司部门</div>
+    </div>
+</div>

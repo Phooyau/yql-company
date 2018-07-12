@@ -1,0 +1,51 @@
+<div class="secondCont2">
+    <div class="panelContent">
+        <ul class="orderArea clearfix">
+            <li class="active"><a href="javascript:;" ng-click="sortActive($event)">价格排序</a></li>
+            <li class=""><a href="javascript:;" ng-click="sortActive($event)">销量排序</a></li>
+        </ul>
+        <ul class="welf-list2 clearfix">
+            <li class="welf-item2" ng-repeat="item in curWelfList">
+                <a href="javascript:;" ng-click="enterDetail($event, $index, item)">
+                    <div class="welf-img2">
+                        <img alt="{{item.cardName}}" title="{{item.cardName}}" ng-src="{{item.coverPicUrl}}">
+                    </div>
+                    <div class="welf-info2">
+                        <h4 title="{{item.boonName}}">{{item.boonName}}</h4>
+                        <p class="welf-desc">{{item.boonIntro | ellipsis}}<span class="lookParti">查看详情</span></p>
+                        <div class="welf-order clearfix">
+                            <div class="welf-price">
+                                <p>￥{{item.companyPrice | moneyShow}}</p>
+                                <p>原价：￥{{item.boonPrice | moneyShow}}</p>
+                            </div>
+                            <button type="button" ng-click="giveWelf($event, item)" ng-bind="btnText">我要赠送</button>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="pageWrap">
+            <div id="pagingEpr"></div>
+        </div>
+    </div>
+
+    <!-- 提示模态框（Modal） -->
+    <div class="etprModal modal fade" id="etprMod_msg" tabindex="-1" role="dialog" aria-labelledby="etprMod_msgLabel" aria-hidden="true">
+        <div class="modal-dialog" style="width: 600px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="etprMod_msgLabel">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-msg">添加即可生效，是否确认添加！</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn etprBtn-md etprBtn-md-default" data-dismiss="modal">取消</button><!--
+                --><button type="button" class="btn etprBtn-md etprBtn-md-blue" ng-click="confirmAdd($event)">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+</div>
