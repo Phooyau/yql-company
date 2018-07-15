@@ -137,6 +137,10 @@ app.controller('WelfareCtrl', function ($scope, $rootScope, $state, $stateParams
         }
     };
 
+    modMsg.on('hidden.bs.modal', function () {
+        history.back();
+    });
+
     // 进入福利详情页
     $scope.enterDetail = function (e, idx, item) {
         $state.go('welfDetail', {from: from, boon: JSON.stringify({index: idx, boonId: item.boonId})});

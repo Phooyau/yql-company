@@ -184,6 +184,10 @@ app.controller('WelfDetailCtrl', function ($scope, $rootScope, $stateParams, epr
         }
     };
 
+    modMsg.on('hidden.bs.modal', function () {
+        history.go(-2);
+    });
+
     // 点击切换手机号模式按钮
     $scope.toggleMode = function (e) {
         validatorImp.resetForm();
