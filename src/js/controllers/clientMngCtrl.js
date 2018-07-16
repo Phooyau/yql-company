@@ -1,4 +1,4 @@
-app.controller('ClientMngCtrl', function ($scope, Emblem) {
+export function ClientMngCtrl($scope, Emblem) {
     $scope.emblems = [];
 
     // 获取客户类型列表
@@ -14,4 +14,4 @@ app.controller('ClientMngCtrl', function ($scope, Emblem) {
             .siblings().removeClass('active');
     };
 
-});
+};

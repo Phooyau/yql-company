@@ -2,7 +2,7 @@
  *  去掉字段末尾“福利”
  *
  */
-app.filter('sliceLast2', function () {
+export default angular.module('app.filter').filter('sliceLast2', function () {
     return function (text) {
         return text.substr(0, text.length - 2);
     }

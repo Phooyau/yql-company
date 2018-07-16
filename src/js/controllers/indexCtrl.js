@@ -1,4 +1,4 @@
-app.controller('IndexCtrl', function ($rootScope, $scope, $state, eprHttp, Dept, Emblem) {
+export function IndexCtrl($rootScope, $scope, $state, eprHttp, Dept, Emblem) {
     var login = JSON.parse(getCookie('UserL'));
     if (!login) {
         location.href = 'login.html';
@@ -114,4 +114,4 @@ app.controller('IndexCtrl', function ($rootScope, $scope, $state, eprHttp, Dept,
         }
     };
 
-});
+};

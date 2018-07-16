@@ -1,5 +1,5 @@
 // $http请求拦截器，设置请求头
-app.factory('authInterceptor', function () {
+export default angular.module('app.service').factory('authInterceptor', function () {
     return {
         request: function (config) {
             config.headers = config.headers || {};

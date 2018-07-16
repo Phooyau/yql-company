@@ -1,5 +1,5 @@
 
-app.controller('ConsDetCtrl', function ($scope, $rootScope, $compile, eprHttp, tableService) {
+export function ConsDetCtrl($scope, $rootScope, $compile, eprHttp, tableService) {
     // 数据表列配置
     var colCdT = [
         {
@@ -61,4 +61,4 @@ app.controller('ConsDetCtrl', function ($scope, $rootScope, $compile, eprHttp, t
         history.back();
     };
 
-});
+};

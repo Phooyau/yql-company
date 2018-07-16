@@ -1,4 +1,4 @@
-app.controller('EtprInfoCtrl', function ($scope, $rootScope, $compile, $state, eprHttp, tableService) {
+export function EtprInfoCtrl($scope, $rootScope, $compile, $state, eprHttp, tableService) {
     // 数据表列配置
     var colCdT = [
         {
@@ -216,4 +216,4 @@ app.controller('EtprInfoCtrl', function ($scope, $rootScope, $compile, $state, e
         $state.go('staffMng.deptStm', {cdId: $scope.idxCdId});
     };
 
-});
+};

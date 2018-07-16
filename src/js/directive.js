@@ -5,7 +5,7 @@
  * @require jquery
  * @example <div menu-active></div>
  */
-app.directive('menuActive', function ($location) {
+export default angular.module('app.directive').directive('menuActive', function ($location) {
     return {
         restrict: 'E, A',
         link: function (scope, iElement, iAttrs, controller) {
