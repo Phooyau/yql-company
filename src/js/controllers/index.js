@@ -1,3 +1,4 @@
+import angular from 'angular';
 import { EtprInfoCtrl } from './etprInfoCtrl';
 import { ConsDetCtrl } from './consDetCtrl';
 import { IndexCtrl } from './indexCtrl';

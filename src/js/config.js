@@ -1,6 +1,7 @@
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 
-
-export default angular.module('app.config', ['ui.router'])
+export default angular.module('app.config', [uiRouter])
     .config(function($stateProvider, $urlRouterProvider, $httpProvider){
     // $httpProvider.defaults.headers.post = {
     //     Token: JSON.parse(getCookie('UserL')).token,

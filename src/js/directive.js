@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 /**
  * 根据URL激活左侧菜单栏
  * angular directive menu-active

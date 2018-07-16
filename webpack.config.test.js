@@ -5,7 +5,8 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        app: "./src/js/app.js",
+        angular: ['angular', 'angular-ui-router'],
+        app: "./src/js/app.js"
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

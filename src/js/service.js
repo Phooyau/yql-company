@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 // $http请求拦截器，设置请求头
 export default angular.module('app.service').factory('authInterceptor', function () {
     return {

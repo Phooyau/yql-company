@@ -1,3 +1,5 @@
+import angular from 'angular';
+
 /**
  *  去掉字段末尾“福利”
  *
