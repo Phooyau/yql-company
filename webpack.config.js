@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 const path = require('path');
 const glob = require('glob');
@@ -33,7 +34,7 @@ function getView(globPath, flag) {
 }
 
 let entriesObj = getView('./src/js/*.js');
-console.log(entriesObj);
+
 // webpack 配置
 let config = {
     // entry: {
@@ -68,16 +69,18 @@ let config = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
             filename: 'static/js/[name].bundle.js'
-        })
+        }),
+        new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
     ],
     module: {
         rules: [
             {
                 test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: 'css-loader',
+                    publicPath: '../../'
+                })
             },
             // {
             //     test: /\.(png|svg|jpg|gif)$/,
