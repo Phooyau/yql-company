@@ -79,13 +79,25 @@ let config = {
                     'css-loader'
                 ]
             },
+            // {
+            //     test: /\.(png|svg|jpg|gif)$/,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //                 name: 'static/images/[name].[hash:8].[ext]'
+            //             }
+            //         }
+            //     ]
+            // },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(jpg|png|gif)(\?.*$|$)/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'url-loader',
                         options: {
-                            name: 'static/images/[name].[hash:8].[ext]'
+                            limit: 10000,
+                            name: 'static/images/[name].[ext]'
                         }
                     }
                 ]
