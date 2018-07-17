@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 // $http请求拦截器，设置请求头
-export default angular.module('app.service').factory('authInterceptor', function () {
+export default angular.module('app.service', []).factory('authInterceptor', function () {
     return {
         request: function (config) {
             config.headers = config.headers || {};
@@ -156,5 +156,5 @@ export default angular.module('app.service').factory('authInterceptor', function
                 return deferred.promise;
             }
         }
-    });
+    }).name;
 

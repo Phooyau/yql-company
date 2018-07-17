@@ -1,3 +1,7 @@
+import '../css/reset.css';
+import '../css/etpr-validate.css';
+import '../css/login.css';
+
 $(function () {
 
     // 请码按钮

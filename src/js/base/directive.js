@@ -7,7 +7,7 @@ import angular from 'angular';
  * @require jquery
  * @example <div menu-active></div>
  */
-export default angular.module('app.directive').directive('menuActive', function ($location) {
+export default angular.module('app.directive', []).directive('menuActive', function ($location) {
     return {
         restrict: 'E, A',
         link: function (scope, iElement, iAttrs, controller) {
@@ -144,4 +144,4 @@ export default angular.module('app.directive').directive('menuActive', function 
         },
         scope: {}
     };
-});
+}).name;

@@ -4,7 +4,7 @@ import angular from 'angular';
  *  去掉字段末尾“福利”
  *
  */
-export default angular.module('app.filter').filter('sliceLast2', function () {
+export default angular.module('app.filter', []).filter('sliceLast2', function () {
     return function (text) {
         return text.substr(0, text.length - 2);
     }
@@ -67,4 +67,4 @@ export default angular.module('app.filter').filter('sliceLast2', function () {
         return function(text) {
             return (text / 100).toFixed(2);
         }
-    });
+    }).name;

@@ -4,13 +4,14 @@ import '../css/epr-wms-table.css';
 import '../css/index.css';
 
 import angular from 'angular';
+import config from './base/config';
+import directive from './base/directive';
+import filter from './base/filter';
+import service from './base/service';
+import controllers from './controllers';
+
 console.log('打印angular');
 console.log(angular);
-import config from './config';
-import directive from './directive';
-import filter from './filter';
-import service from './service';
-import controllers from './controllers';
 
 console.log(config);
 console.log(directive);
@@ -19,10 +20,10 @@ console.log(service);
 console.log(controllers);
 
 var app = angular.module('app', [
-    config.name,
-    directive.name,
-    filter.name,
-    service.name,
-    controllers.name
+    config,
+    directive,
+    filter,
+    service,
+    controllers
 ]);
 console.log(app);

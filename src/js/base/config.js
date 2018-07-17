@@ -12,14 +12,14 @@ export default angular.module('app.config', [uiRouter])
     $stateProvider.state('etprInfo', { // 企业信息页面路由
         cache: false,
         url: '/etprInfo',
-        templateUrl: 'views/etprInfo/etprInfo.html',
+        templateUrl: 'static/views/etprInfo/etprInfo.html',
         controller: 'EtprInfoCtrl',
         controllerAs: 'EtprInfo'
     })
         .state('consDet', { // 消费明细页面路由
             cache: false,
             url: '/consDet',
-            templateUrl: 'views/etprInfo/consDet.html',
+            templateUrl: 'static/views/etprInfo/consDet.html',
             controller: 'ConsDetCtrl',
             controllerAs: 'ConsDet'
         })
@@ -135,4 +135,4 @@ export default angular.module('app.config', [uiRouter])
     //         controllerAs: 'WelfDetail'
     //     })
 
-});
+}).name;
