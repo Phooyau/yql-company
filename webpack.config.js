@@ -34,7 +34,7 @@ function getView(globPath, flag) {
 }
 
 let entriesObj = getView('./src/js/*.js');
-
+console.log(`${path.join(__dirname, "/src/views")}`);
 // webpack 配置
 let config = {
     // entry: {
@@ -74,6 +74,27 @@ let config = {
     ],
     module: {
         rules: [
+            {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    // options: {
+                    //     attrs: [':data-src']
+                    // }
+                }
+            },
+            // {
+            //     test: /views(\\|\/).*\.html$/,
+            //     use: [
+            //         {
+            //             // loader: `ngtemplate-loader?relativeTo=${path.join(__dirname, "/src/views")}`
+            //             loader: 'ngtemplate-loader'
+            //         },
+            //         {
+            //             loader: 'html-loader'
+            //         }
+            //     ],
+            // },
             {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
