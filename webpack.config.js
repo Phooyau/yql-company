@@ -132,7 +132,7 @@ let config = {
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'static/fonts/[name].[hash:8].[ext]'
+                            name: 'static/font/[name].[hash:8].[ext]'
                         }
                     }
                 ]
