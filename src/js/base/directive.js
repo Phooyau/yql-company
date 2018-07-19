@@ -15,6 +15,8 @@ export default angular.module('app.directive', []).directive('menuActive', funct
             if (hashArr[1] !== "" && hashArr[1] !== undefined) {
                 if (hashArr[1] === 'consDet') {
                     hashArr[1] = 'etprInfo'
+                } else if (hashArr[1] === 'welfDetail') {
+                    hashArr[1] = 'welfMarket'
                 }
                 var currentA = $('.leftMenu').find('li a[ui-sref^="' + hashArr[1] + '"]');
                 var parentA = currentA.parent().closest('li').children('a');
