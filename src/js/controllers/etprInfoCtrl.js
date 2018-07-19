@@ -190,6 +190,8 @@ export function EtprInfoCtrl($scope, $rootScope, $compile, $state, eprHttp, tabl
     // 充值
     $scope.recharge = function (e) {
         $scope.paySum = '';
+        $scope.sumPlchld = '';
+        $('.moneyItem', modPay).removeClass('active');
         modPay.modal('show');
     };
 
@@ -199,10 +201,10 @@ export function EtprInfoCtrl($scope, $rootScope, $compile, $state, eprHttp, tabl
             .siblings().removeClass('active');
         if (item) {
             $scope.paySum = item;
-            $scope.ifCustom = false;
+            $scope.sumPlchld = '';
         } else {
             // 选择自定义
-            $scope.ifCustom = true;
+            $scope.sumPlchld = '请输入自定义金额';
         }
     };
 

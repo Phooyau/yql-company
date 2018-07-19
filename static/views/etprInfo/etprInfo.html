@@ -101,7 +101,9 @@
                                     <li class="moneyItem" ng-repeat="item in moneys" ng-click="liActive($event, item)">{{item}}元</li>
                                     <li class="moneyItem" ng-click="liActive($event)">自定义</li>
                                 </ul>
-                                <input type="text" name="paySum" ng-show="ifCustom" ng-model="paySum" autocomplete="off" placeholder="请输入自定义金额" class="etpr-input">
+                                <div style="margin-right: 75px;">
+                                    <input type="text" name="paySum" epr-plchld="sumPlchld" epr-custom ng-model="paySum" autocomplete="off"  class="etpr-input">
+                                </div>
                             </div>
                         </div>
                         <!--<div class="etpr-form-item col-lg-12">-->

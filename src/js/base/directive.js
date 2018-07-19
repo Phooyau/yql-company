@@ -32,6 +32,33 @@ export default angular.module('app.directive', []).directive('menuActive', funct
 })
 
 /**
+ * 根据接收值判断input是否可输入
+ * angular directive epr-custom
+ *
+ * @require jquery
+ * @example <input epr-custom></input>
+ */
+.directive('eprCustom', function () {
+    return {
+        restrict: 'E, A',
+        link: function (scope, iElement, iAttrs, controller) {
+            scope.$watch('plchld', function (newVal) {
+                if (newVal) {
+                    iElement.prop('readonly', false);
+                    iElement.focus();
+                } else {
+                    iElement.prop('readonly', true);
+                }
+                iElement.attr('placeholder', newVal);
+            });
+        },
+        scope: {
+            plchld: '=eprPlchld'
+        }
+    };
+})
+
+/**
  * 自定义支持file类型input的ng-modal
  * angular directive ng-file-modal
  *
