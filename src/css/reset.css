@@ -26,29 +26,55 @@ a,a:hover,a:active,a:visited,a:focus{
 @font-face
 {
     font-family: PingFang-SC-Regular;
-    src: url('../font/PingFang Regular.ttf'),
-    url('../font/PingFang Regular.ttf'); /* IE9+ */
+    src: url('../font/PingFang Regular.ttf');
+    src:
+            url('../font/PingFang Regular.eot?#font-spider') format('embedded-opentype'),
+            url('../font/PingFang Regular.woff2') format('woff2'),
+            url('../font/PingFang Regular.woff') format('woff'),
+            url('../font/PingFang Regular.ttf') format('truetype'),
+            url('../font/souPingFang Regularrce.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face
 {
     font-family: PingFang-SC-Bold;
-    src: url('../font/PingFang Bold.ttf'),
-    url('../font/PingFang Bold.ttf'); /* IE9+ */
-    font-weight: bold;
+    src: url('../font/PingFang Bold.ttf');
+    src:
+            url('../font/PingFang Bold.eot?#font-spider') format('embedded-opentype'),
+            url('../font/PingFang Bold.woff2') format('woff2'),
+            url('../font/PingFang Bold.woff') format('woff'),
+            url('../font/PingFang Bold.ttf') format('truetype'),
+            url('../font/PingFang Bold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face
 {
     font-family: PingFang-SC-Light;
-    src: url('../font/PingFang Light.ttf'),
-    url('../font/PingFang Light.ttf'); /* IE9+ */
+    src: url('../font/PingFang Light.ttf');
+    src:
+            url('../font/PingFang Light.eot?#font-spider') format('embedded-opentype'),
+            url('../font/PingFang Light.woff2') format('woff2'),
+            url('../font/PingFang Light.woff') format('woff'),
+            url('../font/PingFang Light.ttf') format('truetype'),
+            url('../font/PingFang Light.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face
 {
     font-family: PingFang-SC-Medium;
-    src: url('../font/PingFang Medium.ttf'),
-    url('../font/PingFang Medium.ttf'); /* IE9+ */
-    /*font-weight: bold;*/
+    src: url('../font/PingFang Medium.ttf');
+    src:
+            url('../font/PingFang Medium.eot?#font-spider') format('embedded-opentype'),
+            url('../font/PingFang Medium.woff2') format('woff2'),
+            url('../font/PingFang Medium.woff') format('woff'),
+            url('../font/PingFang Medium.ttf') format('truetype'),
+            url('../font/PingFang Medium.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }

@@ -127,12 +127,12 @@ let config = {
                 ]
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: 'static/font/[name].[hash:8].[ext]'
+                            name: 'static/font/[name].[ext]'
                         }
                     }
                 ]
