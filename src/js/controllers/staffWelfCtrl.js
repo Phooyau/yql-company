@@ -1,5 +1,5 @@
 
-app.controller('StaffWelfCtrl', function ($scope, Dept) {
+export function StaffWelfCtrl($scope, Dept) {
 
     Dept.getDept().then(function (res) {
         $scope.depts = res;
@@ -13,4 +13,4 @@ app.controller('StaffWelfCtrl', function ($scope, Dept) {
             .siblings().removeClass('active');
     };
 
-});
+};

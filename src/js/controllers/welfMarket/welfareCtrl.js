@@ -1,4 +1,4 @@
-app.controller('WelfareCtrl', function ($scope, $rootScope, $state, $stateParams, eprHttp) {
+export function WelfareCtrl($scope, $rootScope, $state, $stateParams, eprHttp) {
     // 判断页面跳转来源
     console.log($stateParams);
     $rootScope.dictIdWmk = $stateParams.dictId;
@@ -145,4 +145,4 @@ app.controller('WelfareCtrl', function ($scope, $rootScope, $state, $stateParams
     $scope.enterDetail = function (e, idx, item) {
         $state.go('welfDetail', {from: from, boon: JSON.stringify({index: idx, boonId: item.boonId})});
     }
-});
+};

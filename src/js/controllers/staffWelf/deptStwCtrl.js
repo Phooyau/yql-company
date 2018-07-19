@@ -1,4 +1,4 @@
-app.controller('DeptStwCtrl', function ($scope, $rootScope, $state, $stateParams, eprHttp) {
+export function DeptStwCtrl($scope, $rootScope, $state, $stateParams, eprHttp) {
 
     $rootScope.cdIdStw = $stateParams.cdId;
 
@@ -88,4 +88,4 @@ app.controller('DeptStwCtrl', function ($scope, $rootScope, $state, $stateParams
         });
 
     };
-});
+};

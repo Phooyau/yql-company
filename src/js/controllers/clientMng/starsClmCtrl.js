@@ -1,5 +1,5 @@
 
-app.controller('StarsClmCtrl', function ($scope, $rootScope, $http, $compile, $stateParams, tableService, eprHttp, Emblem) {
+export function StarsClmCtrl($scope, $rootScope, $http, $compile, $stateParams, tableService, eprHttp, Emblem) {
     $scope.genders = [
         {
             text: '男',
@@ -398,4 +398,4 @@ app.controller('StarsClmCtrl', function ($scope, $rootScope, $http, $compile, $s
             $scope.dtapi.draw('page'); // 以现有的搜索条件重新画表
         });
     };
-});
+};

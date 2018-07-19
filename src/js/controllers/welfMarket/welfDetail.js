@@ -1,4 +1,4 @@
-app.controller('WelfDetailCtrl', function ($scope, $rootScope, $stateParams, eprHttp) {
+export function WelfDetailCtrl($scope, $rootScope, $stateParams, eprHttp) {
 
     $scope.btnText = '我要赠送';
     $scope.backShow = false;
@@ -226,4 +226,4 @@ app.controller('WelfDetailCtrl', function ($scope, $rootScope, $stateParams, epr
     }
 
 
-});
+};

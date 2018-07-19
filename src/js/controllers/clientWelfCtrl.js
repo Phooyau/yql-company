@@ -1,5 +1,5 @@
 
-app.controller('ClientWelfCtrl', function ($scope, Emblem) {
+export function ClientWelfCtrl($scope, Emblem) {
     $scope.emblems = [];
 
     // 获取客户类型列表
@@ -15,4 +15,4 @@ app.controller('ClientWelfCtrl', function ($scope, Emblem) {
             .siblings().removeClass('active');
     };
 
-});
+};

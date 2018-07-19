@@ -1,4 +1,4 @@
-app.controller('WelfMarketCtrl', function ($scope, $rootScope, eprHttp) {
+export function WelfMarketCtrl($scope, $rootScope, eprHttp) {
 
     // 获取福利类型
     var option = {
@@ -21,4 +21,4 @@ app.controller('WelfMarketCtrl', function ($scope, $rootScope, eprHttp) {
         $li.addClass('active')
             .siblings().removeClass('active');
     };
-});
+};

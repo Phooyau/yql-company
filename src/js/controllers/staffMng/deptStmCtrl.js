@@ -1,5 +1,5 @@
 
-app.controller('DeptStmCtrl', function ($scope, $rootScope, $http, $compile, $stateParams, tableService, eprHttp) {
+export function DeptStmCtrl($scope, $rootScope, $http, $compile, $stateParams, tableService, eprHttp) {
     $scope.genders = [
         {
             text: '男',
@@ -432,4 +432,4 @@ app.controller('DeptStmCtrl', function ($scope, $rootScope, $http, $compile, $st
             $scope.dtapi.draw('page'); // 以现有的搜索条件重新画表
         });
     };
-});
+};

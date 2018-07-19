@@ -1,4 +1,4 @@
-app.controller('DepartMngCtrl', function ($scope, $rootScope, $compile, eprHttp) {
+export function DepartMngCtrl($scope, $rootScope, $compile, eprHttp) {
     function drawPostTree() {
         var option1 = {
             url: host + '/yql-company-console/api/companyPost/listCompanyPostHierarchy',
@@ -341,4 +341,4 @@ app.controller('DepartMngCtrl', function ($scope, $rootScope, $compile, eprHttp)
             });
         }
     };
-});
+};

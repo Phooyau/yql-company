@@ -1,5 +1,5 @@
 
-app.controller('StaffMngCtrl', function ($scope, $rootScope, Dept) {
+export function StaffMngCtrl($scope, $rootScope, Dept) {
 
     // 员工管理二级列表获取
     Dept.getDept().then(function (res) {
@@ -14,4 +14,4 @@ app.controller('StaffMngCtrl', function ($scope, $rootScope, Dept) {
             .siblings().removeClass('active');
     };
 
-});
+};

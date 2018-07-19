@@ -1,4 +1,4 @@
-app.controller('TypeMngCtrl', function ($scope, $rootScope, eprHttp, Emblem) {
+export function TypeMngCtrl($scope, $rootScope, eprHttp, Emblem) {
     $scope.emblems = [];
 
     // 获取客户类型列表
@@ -95,4 +95,4 @@ app.controller('TypeMngCtrl', function ($scope, $rootScope, eprHttp, Emblem) {
             $scope.getEmblemIdxLink(); // 重新生成首页客户类型相关路由
         });
     }
-});
+};

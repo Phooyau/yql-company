@@ -1,4 +1,4 @@
-app.controller('StarsClwCtrl', function ($scope, $rootScope, $state, $stateParams, eprHttp) {
+export function StarsClwCtrl($scope, $rootScope, $state, $stateParams, eprHttp) {
 
     $rootScope.emblemIdClw = $stateParams.emblemId;
 
@@ -71,4 +71,4 @@ app.controller('StarsClwCtrl', function ($scope, $rootScope, $state, $stateParam
 
     };
 
-});
+};
