@@ -51,6 +51,10 @@ export default angular.module('app.filter', []).filter('sliceLast2', function ()
     .filter('ellipsis', function() {
         return function(text) {
             var end = 25;
+            if (text.length < end + 1) {
+                return text;
+            }
+
             var patt = /\W/;
             if (patt.test(text.charAt(end - 1))) {
                 end--;
