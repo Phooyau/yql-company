@@ -1,6 +1,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
+import views from '../../views';
+
 export default angular.module('app.config', [uiRouter])
     .config(function($stateProvider, $urlRouterProvider, $httpProvider){
     // $httpProvider.defaults.headers.post = {
@@ -12,28 +14,28 @@ export default angular.module('app.config', [uiRouter])
     $stateProvider.state('etprInfo', { // 企业信息页面路由
         cache: false,
         url: '/etprInfo',
-        templateUrl: 'static/views/etprInfo/etprInfo.html',
+        templateUrl: views.etprInfo,
         controller: 'EtprInfoCtrl',
         controllerAs: 'EtprInfo'
     })
         .state('consDet', { // 消费明细页面路由
             cache: false,
             url: '/consDet',
-            templateUrl: 'static/views/etprInfo/consDet.html',
+            templateUrl: views.consDet,
             controller: 'ConsDetCtrl',
             controllerAs: 'ConsDet'
         })
         .state('departMng', { // 部门管理页面路由
             cache: false,
             url: '/departMng',
-            templateUrl: 'static/views/staffMng/departMng.html',
+            templateUrl: views.departMng,
             controller: 'DepartMngCtrl',
             controllerAs: 'DepartMng'
         })
         .state('staffMng', {
             cache: false,
             url: '/staffMng',
-            templateUrl: 'static/views/staffMng/staffMng.html',
+            templateUrl: views.staffMng,
             controller: 'StaffMngCtrl',
             controllerAs: 'StaffMng'
         })
@@ -42,7 +44,7 @@ export default angular.module('app.config', [uiRouter])
         .state('staffMng.deptStm', {
             cache: false,
             url: '/deptStm/:cdId',
-            templateUrl: 'static/views/staffMng/staffMng/dept-stm.html',
+            templateUrl: views.deptStm,
             controller: 'DeptStmCtrl',
             controllerAs: 'DeptStm'
         })
@@ -51,14 +53,14 @@ export default angular.module('app.config', [uiRouter])
         .state('typeMng', { // 客户管理页面路由
             cache: false,
             url: '/typeMng',
-            templateUrl: 'static/views/clientMng/typeMng.html',
+            templateUrl: views.typeMng,
             controller: 'TypeMngCtrl',
             controllerAs: 'TypeMng'
         })
         .state('clientMng', {
             cache: false,
             url: '/clientMng',
-            templateUrl: 'static/views/clientMng/clientMng.html',
+            templateUrl: views.clientMng,
             controller: 'ClientMngCtrl',
             controllerAs: 'ClientMng'
         })
@@ -67,7 +69,7 @@ export default angular.module('app.config', [uiRouter])
         .state('clientMng.starsClm', {
             cache: false,
             url: '/starsClm/:emblemId',
-            templateUrl: 'static/views/clientMng/clientMng/stars-clm.html',
+            templateUrl: views.starsClm,
             controller: 'StarsClmCtrl',
             controllerAs: 'StarsClm'
         })
@@ -76,7 +78,7 @@ export default angular.module('app.config', [uiRouter])
         .state('staffWelf', { // 福利管理页面路由
             cache: false,
             url: '/staffWelf',
-            templateUrl: 'static/views/welfMng/staffWelf.html',
+            templateUrl: views.staffWelf,
             controller: 'StaffWelfCtrl',
             controllerAs: 'StaffWelf'
         })
@@ -85,7 +87,7 @@ export default angular.module('app.config', [uiRouter])
         .state('staffWelf.deptStw', {
             cache: false,
             url: '/deptStw/:cdId',
-            templateUrl: 'static/views/welfMng/staffWelf/dept-stw.html',
+            templateUrl: views.deptStw,
             controller: 'DeptStwCtrl',
             controllerAs: 'DeptStw'
         })
@@ -94,7 +96,7 @@ export default angular.module('app.config', [uiRouter])
         .state('clientWelf', {
             cache: false,
             url: '/clientWelf',
-            templateUrl: 'static/views/welfMng/clientWelf.html',
+            templateUrl: views.clientWelf,
             controller: 'ClientWelfCtrl',
             controllerAs: 'ClientWelf'
         })
@@ -103,7 +105,7 @@ export default angular.module('app.config', [uiRouter])
         .state('clientWelf.starsClw', {
             cache: false,
             url: '/starsClw/:emblemId',
-            templateUrl: 'static/views/welfMng/clientWelf/stars-clw.html',
+            templateUrl: views.starsClw,
             controller: 'StarsClwCtrl',
             controllerAs: 'StarsClw'
         })
@@ -112,7 +114,7 @@ export default angular.module('app.config', [uiRouter])
         .state('welfMarket', {
             cache: false,
             url: '/welfMarket',
-            templateUrl: 'static/views/welfMng/welfMarket.html',
+            templateUrl: views.welfMarket,
             controller: 'WelfMarketCtrl',
             controllerAs: 'WelfMarket'
         })
@@ -121,7 +123,7 @@ export default angular.module('app.config', [uiRouter])
         .state('welfMarket.welfare', {
             cache: false,
             url: '/welfare?from&dictId',
-            templateUrl: 'static/views/welfMng/welfMarket/welfare.html',
+            templateUrl: views.welfare,
             controller: 'WelfareCtrl',
             controllerAs: 'Welfare'
         })
@@ -130,7 +132,7 @@ export default angular.module('app.config', [uiRouter])
         .state('welfDetail', { // 福利详情
             cache: false,
             url: '/welfDetail?from&boon',
-            templateUrl: 'static/views/welfMng/welfMarket/welfDetail.html',
+            templateUrl: views.welfDetail,
             controller: 'WelfDetailCtrl',
             controllerAs: 'WelfDetail'
         })

@@ -2,6 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 const glob = require('glob');
@@ -70,7 +71,8 @@ let config = {
             name: 'manifest',
             filename: 'static/js/[name].bundle.js'
         }),
-        new ExtractTextPlugin('static/css/[name].[contenthash:8].css')
+        new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
+        // new UglifyJsPlugin()
     ],
     module: {
         rules: [
@@ -82,6 +84,28 @@ let config = {
                     //     attrs: [':data-src']
                     // }
                 }
+            },
+            {
+                test: /views(\\|\/).*\.html$/,
+                use: [
+                    {
+                        loader: "file-loader",
+                        options: {
+                            name: "static/views/[name].[hash:8].[ext]"
+                        },
+                    },
+                    {
+                        loader: "extract-loader",
+                    },
+                    {
+                        loader: 'html-loader',
+                        options: {
+                            minimize: true,
+                            removeComments: true,
+                            collapseWhitespace: true
+                        }
+                    }
+                ],
             },
             // {
             //     test: /views(\\|\/).*\.html$/,
@@ -99,7 +123,14 @@ let config = {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: 'css-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options:{
+                                minimize: true //css压缩
+                            }
+                        }
+                    ],
                     publicPath: '../../'
                 })
             },
@@ -157,8 +188,8 @@ pages.forEach(pathname => {
             removeAttributeQuotes: true,
             removeComments: true,
             collapseWhitespace: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true
+            removeScriptTypeAttributes: false,
+            removeStyleLinkTypeAttributes: false
         }
     };
     if (htmlname === 'index') {
