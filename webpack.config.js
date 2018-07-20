@@ -35,7 +35,7 @@ function getView(globPath, flag) {
 }
 
 let entriesObj = getView('./src/js/*.js');
-console.log(`${path.join(__dirname, "/src/views")}`);
+
 // webpack 配置
 let config = {
     // entry: {
@@ -72,7 +72,12 @@ let config = {
             filename: 'static/js/[name].bundle.js'
         }),
         new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
-        // new UglifyJsPlugin()
+        new UglifyJsPlugin({
+            uglifyOptions: {
+                mangle: false,
+                compress: false
+            }
+        })
     ],
     module: {
         rules: [
@@ -176,8 +181,6 @@ let pages = Object.keys(getView('./src/*html'));
 
 pages.forEach(pathname => {
     let htmlname = pathname.split('src\\')[1];
-    console.log(pathname);
-    console.log(htmlname);
     let conf = {
         filename: `${htmlname}.html`,
         template: `${pathname}.html`,
