@@ -3,7 +3,9 @@
     <div>
         <div class="dataPanel welfDetailCont clearfix">
             <div class="welfDetImgWrap">
-                <img class="welfDetImg" alt="{{welfItem.cardName}}" title="{{welfItem.cardName}}" ng-src="{{welfItem.coverPicUrl}}">
+                <a class="welfDetA" ng-href="{{welfItem.boonUrl}}">
+                    <img class="welfDetImg" alt="{{welfItem.cardName}}" title="{{welfItem.cardName}}" ng-src="{{welfItem.coverPicUrl}}">
+                </a>
             </div>
             <div class="welfTextInfo">
                 <h2 class="welfTitle" title="{{welfItem.boonName}}" ng-bind="welfItem.boonName">甜蜜有约生日礼包</h2>

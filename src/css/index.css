@@ -1328,6 +1328,10 @@ a.backBtn {
     float: left;
 }
 
+.welfDetA {
+    display: block;
+}
+
 .welfDetImg {
     width: 380px;
     height: 600px;
